@@ -25,6 +25,9 @@ struct ContentView: View {
                 save: $save,
                 copy: $copy
             )
+            .onTapGesture {
+                focused = false
+            }
             
             HStack {
                 Slider(value: $fontSize, in: 10...400, step: 1)
@@ -74,9 +77,6 @@ struct ContentView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 startAnimation = true
             }
-        }
-        .onTapGesture {
-            focused = false
         }
         .statusBar(hidden: true)
     }
