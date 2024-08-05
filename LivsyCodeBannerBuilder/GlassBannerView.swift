@@ -14,7 +14,6 @@ struct BannerView: View {
     
     var body: some View {
         banner()
-            .preferredColorScheme(.dark)
     }
     
     private func banner() -> some View {
@@ -27,6 +26,12 @@ struct BannerView: View {
                 .frame(maxWidth: .infinity, maxHeight: 200)
                 .padding()
                 .foregroundStyle(.white)
+                .shadow(
+                    color: Color.black.opacity(0.3),
+                    radius: 3,
+                    x: 0,
+                    y: 0
+                )
                 .background {
                     glassBackground()
                 }
@@ -34,19 +39,9 @@ struct BannerView: View {
         }
     }
     
-    @ViewBuilder
     private func glassBackground() -> some View {
         RoundedRectangle(cornerRadius: 25, style: .continuous)
-            .fill(
-                .linearGradient(colors: [
-                    .white.opacity(0.25),
-                    .white.opacity(0.05),
-                    .clear
-                ], startPoint: .topLeading, endPoint: .bottomTrailing)
-            )
-            .blur(radius: 2)
-        
-        RoundedRectangle(cornerRadius: 25, style: .continuous)
+            .fill(.ultraThinMaterial)
             .stroke(
                 .linearGradient(colors: [
                     .white.opacity(0.6),

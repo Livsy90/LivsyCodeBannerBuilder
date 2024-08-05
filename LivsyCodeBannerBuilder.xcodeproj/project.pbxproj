@@ -13,7 +13,7 @@
 		D6FAF5E32C610B4100C4E807 /* ClubbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FAF5DE2C610B4100C4E807 /* ClubbedView.swift */; };
 		D6FAF5E42C610B4100C4E807 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FAF5DF2C610B4100C4E807 /* ContentView.swift */; };
 		D6FAF5E52C610B4100C4E807 /* PostBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FAF5E02C610B4100C4E807 /* PostBannerView.swift */; };
-		D6FAF5E62C610B4100C4E807 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FAF5E12C610B4100C4E807 /* BannerView.swift */; };
+		D6FAF5E62C610B4100C4E807 /* GlassBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FAF5E12C610B4100C4E807 /* GlassBannerView.swift */; };
 		D6FAF5E72C610B4100C4E807 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FAF5E22C610B4100C4E807 /* ImageSaver.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,7 @@
 		D6FAF5DE2C610B4100C4E807 /* ClubbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubbedView.swift; sourceTree = "<group>"; };
 		D6FAF5DF2C610B4100C4E807 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D6FAF5E02C610B4100C4E807 /* PostBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostBannerView.swift; sourceTree = "<group>"; };
-		D6FAF5E12C610B4100C4E807 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		D6FAF5E12C610B4100C4E807 /* GlassBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlassBannerView.swift; sourceTree = "<group>"; };
 		D6FAF5E22C610B4100C4E807 /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +59,7 @@
 		D6CC1B302C60F3840080C369 /* LivsyCodeBannerBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				D6FAF5E12C610B4100C4E807 /* BannerView.swift */,
+				D6FAF5E12C610B4100C4E807 /* GlassBannerView.swift */,
 				D6FAF5DE2C610B4100C4E807 /* ClubbedView.swift */,
 				D6FAF5DF2C610B4100C4E807 /* ContentView.swift */,
 				D6FAF5E22C610B4100C4E807 /* ImageSaver.swift */,
@@ -149,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6FAF5E62C610B4100C4E807 /* BannerView.swift in Sources */,
+				D6FAF5E62C610B4100C4E807 /* GlassBannerView.swift in Sources */,
 				D6FAF5E72C610B4100C4E807 /* ImageSaver.swift in Sources */,
 				D6FAF5E32C610B4100C4E807 /* ClubbedView.swift in Sources */,
 				D6CC1B322C60F3840080C369 /* LivsyCodeBannerBuilderApp.swift in Sources */,
@@ -291,6 +291,7 @@
 				DEVELOPMENT_TEAM = GWLC7B32AQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For saving images";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,6 +321,7 @@
 				DEVELOPMENT_TEAM = GWLC7B32AQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "For saving images";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

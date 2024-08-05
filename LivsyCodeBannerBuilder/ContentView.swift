@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var fontSize: CGFloat = 44
     @State private var save: Bool = false
     @State private var copy: Bool = false
+    @FocusState private var focused: Bool
     
     var body: some View {
         VStack {
@@ -24,7 +25,6 @@ struct ContentView: View {
                 save: $save,
                 copy: $copy
             )
-            .frame(maxHeight: 300)
             
             HStack {
                 Slider(value: $fontSize, in: 10...400, step: 1)
@@ -38,6 +38,7 @@ struct ContentView: View {
             .padding()
             
             TextField("Enter title", text: $text)
+                .focused($focused)
                 .padding(22)
                 .overlay(
                     RoundedRectangle(cornerRadius: 22)
@@ -45,21 +46,23 @@ struct ContentView: View {
                         .padding(12)
                 )
             
+            Spacer()
+
             Button {
-                save.toggle()
+                copy.toggle()
             } label: {
-                Text("Save")
+                Text("Copy")
                     .frame(maxWidth: .infinity)
                     .padding()
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.mini)
             .tint(.purple)
-
+            
             Button {
-                copy.toggle()
+                save.toggle()
             } label: {
-                Text("Copy")
+                Text("Save")
                     .frame(maxWidth: .infinity)
                     .padding()
             }
@@ -72,12 +75,10 @@ struct ContentView: View {
                 startAnimation = true
             }
         }
-        .edgesIgnoringSafeArea(.all)
-        .statusBar(hidden: true)
-        .background {
-            Color.black
-                .edgesIgnoringSafeArea(.all)
+        .onTapGesture {
+            focused = false
         }
+        .statusBar(hidden: true)
     }
     
 }
