@@ -56,5 +56,5 @@ struct GlassBannerView: View {
 }
 
 #Preview {
-    BannerView(text: .constant("Text"), fontSize: .constant(14))
+    GlassBannerView(text: .constant("Text"), fontSize: .constant(14))
 }
