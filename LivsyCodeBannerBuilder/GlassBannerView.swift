@@ -1,5 +1,5 @@
 //
-//  BannerView.swift
+//  GlassBannerView.swift
 //  LivsyCodeBannerBuilder
 //
 //  Created by Livsy on 05.08.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BannerView: View {
+struct GlassBannerView: View {
     
     @Binding var text: String
     @Binding var fontSize: CGFloat

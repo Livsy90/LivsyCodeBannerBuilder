@@ -24,7 +24,7 @@ struct PostBannerView: View {
         ZStack {
             ClubbedView(startAnimation: $startAnimation)
             
-            BannerView(text: $text, fontSize: $fontSize)
+            GlassBannerView(text: $text, fontSize: $fontSize)
                 .frame(maxWidth: .infinity)
                 .padding()
         }
