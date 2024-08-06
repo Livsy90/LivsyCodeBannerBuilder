@@ -10,6 +10,8 @@ import SwiftUI
 struct ClubbedView: View {
     
     @Binding var startAnimation: Bool
+    @Binding var startColor: Color
+    @Binding var endColor: Color
     
     var body: some View {
         clubbedView()
@@ -17,7 +19,7 @@ struct ClubbedView: View {
     
     private func clubbedView() -> some View {
         Rectangle()
-            .fill(.linearGradient(colors: [Color(#colorLiteral(red: 0.6340322495, green: 0.197164923, blue: 0.6014664769, alpha: 1)), Color(#colorLiteral(red: 0.01673864014, green: 0.1376260817, blue: 0.4241580069, alpha: 1))], startPoint: .top, endPoint: .bottom))
+            .fill(.linearGradient(colors: [startColor, endColor], startPoint: .top, endPoint: .bottom))
             .mask({
                 TimelineView(.animation(minimumInterval: 3.6, paused: false)) { _ in
                     Canvas { context, size in

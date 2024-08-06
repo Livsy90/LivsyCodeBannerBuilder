@@ -12,6 +12,8 @@ struct PostBannerView: View {
     @Binding var text: String
     @Binding var fontSize: CGFloat
     @Binding var startAnimation: Bool
+    @Binding var startColor: Color
+    @Binding var endColor: Color
     @Binding var save: Bool
     @Binding var copy: Bool
     
@@ -22,7 +24,11 @@ struct PostBannerView: View {
     
     var body: some View {
         ZStack {
-            ClubbedView(startAnimation: $startAnimation)
+            ClubbedView(
+                startAnimation: $startAnimation,
+                startColor: $startColor,
+                endColor: $endColor
+            )
             
             GlassBannerView(text: $text, fontSize: $fontSize)
                 .frame(maxWidth: .infinity)
