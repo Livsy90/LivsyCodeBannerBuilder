@@ -30,9 +30,13 @@ struct PostBannerView: View {
                 endColor: $endColor
             )
             
-            GlassBannerView(text: $text, fontSize: $fontSize)
-                .frame(maxWidth: .infinity)
-                .padding()
+            GlassBannerView(
+                text: $text,
+                fontSize: $fontSize,
+                color: $startColor
+            )
+            .frame(maxWidth: .infinity)
+            .padding()
         }
         .frame(width: UIScreen.main.bounds.width, height: 300) // For correct rendering
         .background {
