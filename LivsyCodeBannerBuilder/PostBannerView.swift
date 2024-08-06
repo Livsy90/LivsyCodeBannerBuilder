@@ -33,7 +33,8 @@ struct PostBannerView: View {
             GlassBannerView(
                 text: $text,
                 fontSize: $fontSize,
-                color: $startColor
+                topColor: $endColor,
+                bottomColor: $startColor
             )
             .frame(maxWidth: .infinity)
             .padding()

@@ -11,7 +11,8 @@ struct GlassBannerView: View {
     
     @Binding var text: String
     @Binding var fontSize: CGFloat
-    @Binding var color: Color
+    @Binding var topColor: Color
+    @Binding var bottomColor: Color
     
     var body: some View {
         banner()
@@ -45,10 +46,11 @@ struct GlassBannerView: View {
             .fill(.ultraThinMaterial)
             .stroke(
                 .linearGradient(colors: [
-                    .white.opacity(0.6),
+                    topColor.opacity(0.5),
+                    topColor.opacity(0.2),
                     .clear,
-                    color.opacity(0.2),
-                    color.opacity(0.5)
+                    bottomColor.opacity(0.2),
+                    bottomColor.opacity(0.5)
                 ], startPoint: .topLeading, endPoint: .bottomTrailing),
                 lineWidth: 2
             )
@@ -57,5 +59,5 @@ struct GlassBannerView: View {
 }
 
 #Preview {
-    GlassBannerView(text: .constant("Text"), fontSize: .constant(14), color: .constant(.purple))
+    GlassBannerView(text: .constant("Text"), fontSize: .constant(14), topColor: .constant(.purple), bottomColor: .constant(.pink))
 }
