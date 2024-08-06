@@ -20,39 +20,40 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            VStack {
-                PostBannerView(
-                    text: $text,
-                    fontSize: $fontSize,
-                    startAnimation: $startAnimation,
-                    startColor: $startColor,
-                    endColor: $endColor,
-                    save: $save,
-                    copy: $copy
-                )
-                
-                HStack {
-                    ColorPicker("", selection: $startColor)
-                        .labelsHidden()
-                    
-                    ColorPicker("", selection: $endColor)
-                        .labelsHidden()
-                }
-                
-                HStack {
-                    Slider(value: $fontSize, in: 10...300, step: 1)
-                        .padding(.horizontal)
-                    
-                    Text(fontSize.formatted())
-                        .font(.system(size: 12))
-                        .fontWeight(.semibold)
-                        .frame(width: 32)
-                }
-            }
-            .padding(.bottom, 8)
+            PostBannerView(
+                text: $text,
+                fontSize: $fontSize,
+                startAnimation: $startAnimation,
+                startColor: $startColor,
+                endColor: $endColor,
+                save: $save,
+                copy: $copy
+            )
             .onTapGesture {
                 focused = false
             }
+            
+            HStack {
+                ColorPicker("", selection: $startColor)
+                    .labelsHidden()
+                
+                ColorPicker("", selection: $endColor)
+                    .labelsHidden()
+            }
+            
+            HStack {
+                Slider(value: $fontSize, in: 10...300, step: 1)
+                    .padding(.horizontal)
+                
+                Text(fontSize.formatted())
+                    .font(.system(size: 12))
+                    .fontWeight(.semibold)
+                    .frame(width: 32)
+            }
+            .onTapGesture {
+                focused = false
+            }
+            .padding(.bottom, 8)
             
             TextField("Enter title", text: $text)
                 .focused($focused)
