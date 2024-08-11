@@ -13,6 +13,7 @@ struct GlassBannerView: View {
     @Binding var fontSize: CGFloat
     @Binding var topColor: Color
     @Binding var bottomColor: Color
+    @Binding var isShowWatermark: Bool
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -22,7 +23,7 @@ struct GlassBannerView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 35, height: 35)
-                .opacity(0.7)
+                .opacity(isShowWatermark ? 0.7 : .zero)
                 .padding(.trailing, 18)
                 .padding(.top, 8)
         }
@@ -74,6 +75,7 @@ struct GlassBannerView: View {
         text: .constant("Text"),
         fontSize: .constant(14),
         topColor: .constant(.purple),
-        bottomColor: .constant(.pink)
+        bottomColor: .constant(.pink),
+        isShowWatermark: .constant(false)
     )
 }

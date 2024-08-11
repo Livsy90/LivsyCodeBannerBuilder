@@ -16,7 +16,9 @@ struct ContentView: View {
     @State private var fontSize: CGFloat = 44
     @State private var save: Bool = false
     @State private var copy: Bool = false
+    @State private var isShowWatermark: Bool = true
     @FocusState private var focused: Bool
+    
     
     var body: some View {
         VStack {
@@ -27,7 +29,8 @@ struct ContentView: View {
                 startColor: $startColor,
                 endColor: $endColor,
                 save: $save,
-                copy: $copy
+                copy: $copy,
+                isShowWatermark: $isShowWatermark
             )
             .onTapGesture {
                 focused = false
@@ -39,7 +42,12 @@ struct ContentView: View {
                 
                 ColorPicker("", selection: $endColor)
                     .labelsHidden()
+                
+                Spacer()
+                
+                Toggle("", isOn: $isShowWatermark)
             }
+            .padding(.horizontal)
             
             HStack {
                 Slider(value: $fontSize, in: 10...300, step: 1)

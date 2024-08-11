@@ -16,6 +16,7 @@ struct PostBannerView: View {
     @Binding var endColor: Color
     @Binding var save: Bool
     @Binding var copy: Bool
+    @Binding var isShowWatermark: Bool
     
     @Environment(\.displayScale) private var displayScale
     @Environment(\.colorScheme) private var colorScheme
@@ -34,7 +35,8 @@ struct PostBannerView: View {
                 text: $text,
                 fontSize: $fontSize,
                 topColor: $endColor,
-                bottomColor: $startColor
+                bottomColor: $startColor, 
+                isShowWatermark: $isShowWatermark
             )
             .frame(maxWidth: .infinity)
             .padding()
