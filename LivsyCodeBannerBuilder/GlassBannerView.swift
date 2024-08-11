@@ -15,7 +15,18 @@ struct GlassBannerView: View {
     @Binding var bottomColor: Color
     
     var body: some View {
-        banner()
+        ZStack(alignment: .topTrailing) {
+            banner()
+            
+            Image("saturn-logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 35, height: 35)
+                .opacity(0.7)
+                .padding(.trailing, 18)
+                .padding(.top, 8)
+        }
+            
     }
     
     private func banner() -> some View {
@@ -59,5 +70,10 @@ struct GlassBannerView: View {
 }
 
 #Preview {
-    GlassBannerView(text: .constant("Text"), fontSize: .constant(14), topColor: .constant(.purple), bottomColor: .constant(.pink))
+    GlassBannerView(
+        text: .constant("Text"),
+        fontSize: .constant(14),
+        topColor: .constant(.purple),
+        bottomColor: .constant(.pink)
+    )
 }
